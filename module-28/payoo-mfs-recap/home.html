@@ -21,7 +21,7 @@
             <div class="stats shadow">
                 <div class="stat">
                   <div class="stat-title">Account Balance</div>
-                  <div class="stat-value">9400</div>
+                  <div id="account-balance" class="stat-value">9400</div>
                 </div>
               </div>
               <div class="divider"></div>
@@ -37,16 +37,16 @@
                     <label class="label">
                       <span class="label-text">Amount</span>
                     </label>
-                    <input type="text" placeholder="Add Money Amount" class="input input-bordered" required />
+                    <input id="input-add-money" type="text" placeholder="Add Money Amount" class="input input-bordered" required />
                   </div>
                   <div class="form-control">
                     <label class="label">
                       <span class="label-text">Pin Number</span>
                     </label>
-                    <input type="password" placeholder="Pin Number" class="input input-bordered" required />
+                    <input id="input-pin-number" type="password" placeholder="Pin Number" class="input input-bordered" required />
                   </div>
                   <div class="form-control mt-6">
-                    <button class="btn btn-primary">Add Money</button>
+                    <button id="btn-add-money" class="btn btn-primary">Add Money</button>
                   </div>
                 </form>
               </div>
@@ -55,5 +55,6 @@
         </div>
       </div>
     </main>
+    <script src="js/addMoney.js"></script>
   </body>
 </html>
