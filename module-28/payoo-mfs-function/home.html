@@ -19,19 +19,20 @@
                 <div class="stats shadow">
                     <div class="stat">
                       <div class="stat-title">Account Balance</div>
-                      <div class="stat-value">9400</div>
+                      <div id="account-balance" class="stat-value">9400</div>
                     </div>
                   </div>
                   <div class="divider"></div>
                  <!-- features start -->
-                 <div>
-                    <button class="btn btn-lg">Add Money</button>
-                    <button class="btn btn-lg">Cash Out</button>
+                 <div class="flex justify-center items-center flex-wrap space-x-2 space-y-2">
+                    <button id="show-add-money-form" class="btn btn-lg">Add Money</button>
+                    <button id="show-cash-out-form" class="btn btn-lg">Cash Out</button>
+                    <button id="show-transaction-history" class="btn btn-lg">Transactions</button>
                  </div>
                  <!-- features end -->
                  <div class="divider"></div>
                  <!-- add money form starts  -->
-                 <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                 <div id="add-money-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form class="card-body">
                       <div class="form-control">
                         <label class="label">
@@ -51,11 +52,40 @@
                     </form>
                   </div>
                  <!-- add money form ends -->
+                  <!-- cash out form starts  -->
+                 <div id="cash-out-form" class="hidden card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                  <form class="card-body">
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Cash Out Amount</span>
+                      </label>
+                      <input type="text" placeholder="Amount" id="input-cash-out" class="input input-bordered" required />
+                    </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Pin Number</span>
+                      </label>
+                      <input type="password" placeholder="Pin Number" id="input-cash-out-pin" class="input input-bordered" required autocomplete="off"/>
+                    </div>
+                    <div class="form-control mt-6">
+                      <button  id="btn-cash-out" class="btn btn-primary">Cash Out</button>
+                    </div>
+                  </form>
+                </div>
+                  <!-- cash out form ends  -->
+                   <div id="transaction-section" class="hidden">
+                    <h2 class="text-3xl text-center">Transaction History</h2>
+                    <div id="transaction-container" class="space-y-2">
+
+                    </div>
+                   </div>
                 </div>
             </div>
           </div>
     </main>
     <script src="js/utilites2.js"></script>
     <script src="js/addMoney2.js"></script>
+    <script src="js/cashOut.js"></script>
+    <script src="js/features.js"></script>
 </body>
 </html>
