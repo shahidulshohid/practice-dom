@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>b9A5 project</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font Awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section
+      class="bg-white px-8 py-5 w-11/12 mx-auto rounded-2xl shadow-sm grid grid-cols-3 gap-5"
+    >
+      <!-- left side section starts here -->
+      <div class="col-span-2">
+        <div class="flex justify-between">
+          <h2 class="text-2xl font-semibold">Select Your Seat</h2>
+          <button class="flex text-green-500 btn">
+            <p>Seats</p>
+            <p id="Available-seat">40</p>
+          </button>
+        </div>
+        <div class="border-b-2 border-dashed my-5"></div>
+        <div class="flex justify-between items-center">
+          <p>
+            <i class="fa-solid fa-couch"></i>
+            <span>Available</span>
+          </p>
+          <p class="text-green-500">
+            <i class="fa-solid fa-couch"></i>
+            <span>Selected</span>
+          </p>
+        </div>
+        <div class="border-b-2 border-dashed my-5"></div>
+        <!-- seat section starts here  -->
+        <section class="grid grid-cols-12 items-center gap-y-12 mr-20">
+          <!-- font seat  -->
+          <p class="cols-span-1"></p>
+          <div
+            class="col-span-11 grid grid-cols-10 gap-16 items-center text-center"
+          >
+            <p class="col-span-8"></p>
+            <button class="btn col-span-2">while</button>
+          </div>
+          <!-- row 1  -->
+          <p class="cols-span-1">A</p>
+          <div
+            class="col-span-11 grid grid-cols-10 gap-16 items-center text-center"
+          >
+            <button onclick="handleSelectSeat(this)"
+              class="col-span-2 btn btn-md hover:bg-black hover:text-white transition-colors duration-200 ease-in-out"
+            >
+              A1
+            </button>
+            <button onclick="handleSelectSeat(this)"
+              class="col-span-2 btn btn-md hover:bg-black hover:text-white transition-colors duration-200 ease-in-out"
+            >
+              A2
+            </button>
+            <p class="col-span-2"></p>
+            <button onclick="handleSelectSeat(this)"
+              class="col-span-2 btn btn-md hover:bg-black hover:text-white transition-colors duration-200 ease-in-out"
+            >
+              A3
+            </button>
+            <button onclick="handleSelectSeat(this)"
+              class="col-span-2 btn btn-md hover:bg-black hover:text-white transition-colors duration-200 ease-in-out"
+            >
+              A4
+            </button>
+            <button onclick="handleSelectSeat(this)"
+              class="col-span-2 btn btn-md hover:bg-black hover:text-white transition-colors duration-200 ease-in-out"
+            >
+              B1
+            </button>
+            <button onclick="handleSelectSeat(this)"
+              class="col-span-2 btn btn-md hover:bg-black hover:text-white transition-colors duration-200 ease-in-out"
+            >
+              B2
+            </button>
+          </div>
+        </section>
+        <!-- seat section ends here  -->
+      </div>
+      <!-- left side section ends here -->
+
+      <!-- right section starts here  -->
+      <div class="col-span-1 border-l-2 border-dashed px-5">
+        <div>
+          <h2 class="text-2xl font-semibold">Select Your Seat</h2>
+        </div>
+        <div class="border-b-2 border-dashed my-5"></div>
+        <section>
+          <div class="bg-[#f7f8f8]">
+            <h3 class="flex justify-between p-8 rounded-xl">
+              <p class="flex">
+                <span>Seat</span>
+                <span id="total-booked"
+                  class="bg-green-500 w-4 h-4 p-2 text-white flex justify-center items-center rounded-full font-normal text-sm"
+                  >0</span
+                >
+              </p>
+              <p>Class</p>
+              <p>Price</p>
+            </h3>
+            <div class="border-b-2 border-dashed my-2"></div>
+            <ul id="selected-seat" class="space-y-5">
+              <h3 id="default-text"
+                class="text-3xl font-semibold text-error capitalize text-center"
+              >
+                no seat books
+              </h3>
+            </ul>
+            <div class="border-b-2 border-dashed my-2"></div>
+            <div class="text-lg font-semibold flex justify-between">
+              <p>Total Price</p>
+              <p>
+                <span>BDT:</span>
+                <span id="total-price">***</span>
+              </p>
+            </div>
+            <div class="border-b-2 border-dashed my-5"></div>
+            <div
+            id="show-coupon-price"
+              class="flex items-center gap-2 border-y-2 py-1 my-2 border-dashed text-lg font-semibold justify-between"
+            >
+            <!-- ================================================================== -->
+              <input id="coupon-filed"
+                type="text"
+                disabled
+                class="input my-5 w-full input-primary border-primry"
+                placeholder="have a coupon?"
+              />
+              <button id="coupon-btn" class="btn bg-primary" disabled>Apply</button>
+            </div>
+            <div class="text-lg font-semibold flex justify-between">
+              <p>Grand Price</p>
+              <p>
+                <span>BDT:</span>
+                <span id="grand-total">***</span>
+              </p>
+            </div>
+            <div class="border-b-2 border-dashed my-2 pb-2"></div>
+          </div>
+          <!-- form section starts -->
+          <div class="py-5">
+            <label class="form-control w-full my-3">
+              <div class="label">
+                <span class="label-text font-bold text-base"
+                  >Passenger name*</span
+                >
+              </div>
+              <input
+                type="text"
+                placeholder="Enter Passenger Name"
+                class="input input-bordered w-full"
+              />
+            </label>
+            <label class="form-control w-full my-3">
+              <div class="label">
+                <span class="label-text font-bold text-base"
+                  >Phone Number*</span
+                >
+              </div>
+              <input id="phone-number"
+                type="number"
+                placeholder="Enter Phone number"
+                class="input input-bordered w-full"
+              />
+            </label>
+            <label class="form-control w-full my-3">
+              <div class="label">
+                <span class="label-text font-bold text-base">Email Id*</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Enter Email Address"
+                class="input input-bordered w-full"
+              />
+            </label>
+            <!-- //================================================================ -->
+            <button id="next-btn" disabled onclick="my_modal_1.showModal()"
+              class="btn bg-green-500 mt-5 text-lg text-white uppercase w-full"
+            >
+              Next
+            </button>
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <button class="btn" onclick="my_modal_1.showModal()">
+              open modal
+            </button> -->
+            <dialog id="my_modal_1" class="modal">
+              <div class="modal-box">
+                <h3 class="text-lg font-bold">Hello!</h3>
+                <p class="py-4">
+                  Press ESC key or click the button below to close
+                </p>
+                <div class="modal-action">
+                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button id="btn-continue" class="btn">Continue</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
+            <div class="flex justify-between mt-5">
+                <a class="underline font-semibold hover:text-primary transition-colors duration-200 ease-out" href="#">Terms and conditions</a>
+                <a class="underline font-semibold hover:text-primary transition-colors duration-200 ease-out" href="#">Cancellation policy</a>
+            </div>
+          </div>
+          <!-- form section ends -->
+        </section>
+      </div>
+      <!-- right section ends here  -->
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
