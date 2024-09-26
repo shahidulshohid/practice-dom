@@ -20,6 +20,7 @@ const sonkha = [...friends, 400, 500]
 
 const listOfNumbers = [3, 4, 5, 6,7, 3, 22, 2,]
 copyFromLIstOfNumbers = [...listOfNumbers, 400, 500]
+copyFromLIstOfNumbers.push(90)
 console.log(listOfNumbers)
 console.log(copyFromLIstOfNumbers);
 
